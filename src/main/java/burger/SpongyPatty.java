@@ -1,6 +1,6 @@
 package burger;
 
-public class SpongyPatty extends Hamburger {
+public class SpongyPatty extends Burger {
     //스폰지밥 버거
     public SpongyPatty() {
         super();

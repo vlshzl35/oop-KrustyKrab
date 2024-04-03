@@ -1,6 +1,6 @@
 package burger;
 
-public class KrabbyPatty extends Hamburger{
+public class KrabbyPatty extends Burger{
     public KrabbyPatty() {
         super();
         this.setSauce("뱃살소스");

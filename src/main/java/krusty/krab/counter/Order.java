@@ -1,67 +1,53 @@
 package krusty.krab.counter;
 
+import burger.Burger;
+import krusty.krab.buger.BurgerRepository;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
-import OhHyungdong.Hamburger;
+public class Order {
+    private int orderNum;
+    private Burger[] burgers;
 
-import java.util.Random;
+    public Order(int orderNum) {
+        this.orderNum = orderNum;
 
-public class Order
-{
-    private Hamburger[] hamburgers;
-    private int guestId;
-    private int menuId;
-    private String menuName;
+        BurgerRepository burgerRepository = new BurgerRepository();
+        Burger[] burgerMenu = burgerRepository.getBurgers();
+
+        // 햄버거 수 랜덤 설정
+        int randomNum = (int) (Math.random() * (burgerMenu.length - 1) + 1);
+        burgers = new Burger[randomNum];
+
+        // 햄버거 메뉴 랜덤으로 선택
+        Set<Integer> randomNumSet = new TreeSet<>();
+        while (randomNumSet.size() < randomNum) {
+            randomNumSet.add((int)(Math.random() * burgerMenu.length));
+        }
+
+        // 햄버거 메뉴 대입
+        List<Integer> randomNumList = randomNumSet.stream().toList();
+        for (int i = 0; i < randomNum; i++) {
+            burgers[i] = burgerMenu[randomNumList.get(i)];
+        }
+    }
+
+    public int getOrderNum() {
+        return orderNum;
+    }
+
+    public Burger[] getBurgers() {
+        return burgers.clone();
+    }
 
     @Override
     public String toString() {
-        return "주문번호 : " + guestId +
-                ", 제품 이름 : '" + menuName + '\'';
-    }
-    public Order() {
-        this.hamburgers = new Hamburger[5];
-        hamburgers[0] = new Hamburger(0,"게살버거");
-        hamburgers[1] = new Hamburger(1,"행운버거");
-        hamburgers[2] = new Hamburger(2,"이쁜이버거");
-        hamburgers[3] = new Hamburger(3,"슈퍼게살버거");
-        hamburgers[4] = new Hamburger(4,"젤리버거");
-    }
-    public Order createOrder(){
-        Random rnd = new Random();
-        int guestId = rnd.nextInt(100) + 1;
-        int burgerId = rnd.nextInt(3) + 0;
-        String menuName = hamburgers[burgerId].getName();
-        Order order = new Order(guestId,burgerId,menuName);
-        return order;
-    }
-
-    public int getGuestId() {
-        return guestId;
-    }
-
-    public void setGuestId(int guestId) {
-        this.guestId = guestId;
-    }
-
-    public Order(int guestId, int menuId, String menuName) {
-        this.guestId = guestId;
-        this.menuId = menuId;
-        this.menuName = menuName;
-    }
-
-    public int getMenuId() {
-        return menuId;
-    }
-
-    public void setMenuId(int menuId) {
-        this.menuId = menuId;
-    }
-
-    public String getMenuName() {
-        return menuName;
-    }
-
-    public void setMenuName(String menuName) {
-        this.menuName = menuName;
+        return "Order{" +
+                "orderNum=" + orderNum +
+                ", burgers=" + Arrays.toString(burgers) +
+                '}';
     }
 }

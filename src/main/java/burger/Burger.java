@@ -1,18 +1,26 @@
 package burger;
 
-public class Hamburger {
+public class Burger {
     private String  bread;
     private String  sauce;
     private String  vegetable;
     private String  cheese;
     private String  patty;
 
-    public Hamburger() {
+    public Burger() {
         this.bread = "빵";
         this.sauce = "케챱";
         this.vegetable = "양상추";
         this.cheese = "치즈";
         this.patty = "게살";
+    }
+
+    public Burger(Burger other) {
+        this.bread = other.bread;
+        this.sauce = other.sauce;
+        this.vegetable = other.vegetable;
+        this.cheese = other.cheese;
+        this.patty = other.patty;
     }
 
     public String getBread() {

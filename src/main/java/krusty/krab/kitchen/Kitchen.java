@@ -1,3 +1,7 @@
+package krusty.krab.kitchen;
+
+import krusty.krab.counter.Order;
+
 public class Kitchen {
     private final Display DISPLAY;
     private final Grill GRILL;
@@ -9,11 +13,11 @@ public class Kitchen {
         CHECKORDER = new CheckOrder();
     }
 
-    public void startCook(Object object) {
+    public void startCook(Order order) {
         while (true) {
-            DISPLAY.printRecipe();
-            if (CHECKORDER.checkOrder(GRILL.cookHamburger())) {
-                System.out.println("주문하신 햄버거 나왔습니다! :)");
+            DISPLAY.printRecipe(order.getBurgers());
+            if (CHECKORDER.checkOrder(order.getBurgers(), GRILL.cookHamburger())) {
+                System.out.println(order.getOrderNum()+ "번 손님! 주문하신 햄버거 나왔습니다! :)");
                 break;
             }
             else {

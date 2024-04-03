@@ -1,6 +1,8 @@
-package OhHyungdong;
+package krusty.krab.counter;
 
 
+
+import OhHyungdong.Hamburger;
 
 import java.util.Random;
 

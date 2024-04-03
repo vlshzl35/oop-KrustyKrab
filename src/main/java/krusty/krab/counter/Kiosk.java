@@ -1,4 +1,8 @@
-package OhHyungdong;
+package krusty.krab.counter;
+
+import OhHyungdong.Hamburger;
+import burger.Burger;
+import krusty.krab.buger.BurgerRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,5 +21,11 @@ public class Kiosk {
         System.out.println(orderList);
     }
 
+    private BurgerRepository burgerRepository = new BurgerRepository();
+
+    public void orderRandom() {
+        Burger[] burgers = burgerRepository.getBurgers();
+        
+    }
 }
 

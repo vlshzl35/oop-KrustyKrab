@@ -2,7 +2,7 @@ package burger;
 public class App {
     public static void main(String[] args) {
 
-        Hamburger hb= new Hamburger();
+        Burger hb= new Burger();
         System.out.println(hb);
 
         JellyPatty hb1 = new JellyPatty();

@@ -1,3 +1,5 @@
+package krusty.krab.kitchen;
+
 public class Kitchen {
     private final Display DISPLAY;
     private final Grill GRILL;

@@ -1,6 +1,6 @@
 package burger;
 
-public class PrettyPatty extends Hamburger{
+public class PrettyPatty extends Burger {
     //이쁜이 버거
     private String sauce = "무지개소스";
     private String patty = "무지개패티";

@@ -1,18 +1,18 @@
 public class Kitchen {
-    private Display display;
-    private Grill grill;
-    private OrderCheck orderCheck;
+    private final Display DISPLAY;
+    private final Grill GRILL;
+    private final CheckOrder CHECKORDER;
 
     public Kitchen() {
-        display = new Display();
-        grill = new Grill();
-        orderCheck = new OrderCheck();
+        DISPLAY = new Display();
+        GRILL = new Grill();
+        CHECKORDER = new CheckOrder();
     }
 
     public void startCook(Object object) {
         while (true) {
-            display.printRecipe();
-            if (orderCheck.checkOrder(grill.cookHamburger())) {
+            DISPLAY.printRecipe();
+            if (CHECKORDER.checkOrder(GRILL.cookHamburger())) {
                 System.out.println("주문하신 햄버거 나왔습니다! :)");
                 break;
             }

@@ -43,10 +43,6 @@ public class Order {
         return new Burger(burgers[index]);
     }
 
-    public Burger[] getBurgers() {
-        return burgers.clone();
-    }
-
     @Override
     public String toString() {
         return "Order{" +

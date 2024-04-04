@@ -1,11 +1,14 @@
-package burger;
+package krusty.krab.data.burger;
+
+import java.util.Objects;
 
 public class Burger {
-    private String  bread;
-    private String  sauce;
-    private String  vegetable;
-    private String  cheese;
-    private String  patty;
+    private String name;
+    private String bread;
+    private String sauce;
+    private String vegetable;
+    private String cheese;
+    private String patty;
 
     public Burger() {
         this.bread = "빵";
@@ -15,12 +18,27 @@ public class Burger {
         this.patty = "게살";
     }
 
+    public Burger(String sauce, String patty) {
+        this();
+        this.sauce = sauce;
+        this.patty = patty;
+    }
+
     public Burger(Burger other) {
+        this.name = other.name;
         this.bread = other.bread;
         this.sauce = other.sauce;
         this.vegetable = other.vegetable;
         this.cheese = other.cheese;
         this.patty = other.patty;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    protected void setName(String name) {
+        this.name = name;
     }
 
     public String getBread() {
@@ -61,5 +79,18 @@ public class Burger {
 
     public void setPatty(String patty) {
         this.patty = patty;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Burger burger = (Burger) o;
+        return Objects.equals(bread, burger.bread) && Objects.equals(sauce, burger.sauce) && Objects.equals(vegetable, burger.vegetable) && Objects.equals(cheese, burger.cheese) && Objects.equals(patty, burger.patty);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bread, sauce, vegetable, cheese, patty);
     }
 }

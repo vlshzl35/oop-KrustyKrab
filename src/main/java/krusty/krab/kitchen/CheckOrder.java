@@ -1,9 +1,9 @@
 package krusty.krab.kitchen;
 
-import burger.Burger;
+import krusty.krab.data.burger.Burger;
 
 public class CheckOrder {
-    public boolean checkOrder(Burger[] orderBurgers, Burger[] cookBurgers) {
-        return false;
+    public boolean checkOrder(Burger orderBurger, Burger cookBurger) {
+        return orderBurger.equals(cookBurger) && orderBurger.hashCode() == cookBurger.hashCode();
     }
 }

@@ -1,7 +1,7 @@
 package krusty.krab.counter;
 
-import burger.Burger;
-import krusty.krab.buger.BurgerRepository;
+import krusty.krab.data.burger.Burger;
+import krusty.krab.data.BurgerRepository;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,27 +16,31 @@ public class Order {
         this.orderNum = orderNum;
 
         BurgerRepository burgerRepository = new BurgerRepository();
-        Burger[] burgerMenu = burgerRepository.getBurgers();
-
         // 햄버거 수 랜덤 설정
-        int randomNum = (int) (Math.random() * (burgerMenu.length - 1) + 1);
+        int randomNum = (int) (Math.random() * (burgerRepository.getLength() - 1) + 1);
         burgers = new Burger[randomNum];
-
         // 햄버거 메뉴 랜덤으로 선택
         Set<Integer> randomNumSet = new TreeSet<>();
         while (randomNumSet.size() < randomNum) {
-            randomNumSet.add((int)(Math.random() * burgerMenu.length));
+            randomNumSet.add((int)(Math.random() * burgerRepository.getLength()));
         }
-
         // 햄버거 메뉴 대입
         List<Integer> randomNumList = randomNumSet.stream().toList();
         for (int i = 0; i < randomNum; i++) {
-            burgers[i] = burgerMenu[randomNumList.get(i)];
+            burgers[i] = burgerRepository.getBurger(randomNumList.get(i));
         }
     }
 
     public int getOrderNum() {
         return orderNum;
+    }
+
+    public int getBurgersNum() {
+        return burgers.length;
+    }
+
+    public Burger getBurgerAtIndex(int index) {
+        return new Burger(burgers[index]);
     }
 
     public Burger[] getBurgers() {

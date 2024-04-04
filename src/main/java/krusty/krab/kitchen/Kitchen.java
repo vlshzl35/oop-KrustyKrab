@@ -14,6 +14,7 @@ public class Kitchen {
     }
 
     public void startCook(Order order) {
+        System.out.println("우와! 햄버거 주문이" + order.getBurgersNum() + "개 들어왔어!");
         for (int i = 0; i < order.getBurgersNum(); i++) {
             while (true) {
                 DISPLAY.printRecipe(order.getBurgerAtIndex(i));

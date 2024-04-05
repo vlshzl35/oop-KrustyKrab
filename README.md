@@ -1,4 +1,4 @@
-# oop-KrustyKrab
+# oop-KrustyKrab (집게리아)
 
 ## 팀원 소개
 1. 양희윤 : Hamburger와 레시피 생성 및 초기화

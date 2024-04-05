@@ -17,7 +17,7 @@ public class Kitchen {
         System.out.println("우와! 햄버거 주문이" + order.getBurgersNum() + "개 들어왔어!");
         for (int i = 0; i < order.getBurgersNum(); i++) {
             while (true) {
-                DISPLAY.printRecipe(order.getBurgerAtIndex(i));
+                DISPLAY.printRecipe(order.getBurgerAtIndex(i)); // 레시피 출력
                 if (CHECK_ORDER.checkOrder(order.getBurgerAtIndex(i), GRILL.cookHamburger())) {
                     break;
                 } else {
@@ -26,6 +26,6 @@ public class Kitchen {
                 }
             }
         }
-        System.out.println(order.getOrderNum() + "번 손님~ 주문하신 햄버거 나왔습니다!");
+        System.out.println(order.getOrderNum()+1 + "번 손님~ 주문하신 햄버거 나왔습니다!");
     }
 }

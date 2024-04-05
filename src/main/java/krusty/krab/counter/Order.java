@@ -18,16 +18,17 @@ public class Order {
         BurgerRepository burgerRepository = new BurgerRepository();
         // 햄버거 수 랜덤 설정
         int randomNum = (int) (Math.random() * (burgerRepository.getLength() - 1) + 1);
-        burgers = new Burger[randomNum];
+        burgers = new Burger[randomNum]; //1~9 랜덤
         // 햄버거 메뉴 랜덤으로 선택
         Set<Integer> randomNumSet = new TreeSet<>();
         while (randomNumSet.size() < randomNum) {
             randomNumSet.add((int)(Math.random() * burgerRepository.getLength()));
         }
         // 햄버거 메뉴 대입
-        List<Integer> randomNumList = randomNumSet.stream().toList();
+        List<Integer> randomNumList = randomNumSet.stream().toList(); // [1,3,5,7,9]
         for (int i = 0; i < randomNum; i++) {
             burgers[i] = burgerRepository.getBurger(randomNumList.get(i));
+            //          = BURGERS[Index];
         }
     }
 

@@ -12,4 +12,4 @@
 5. 오형동 : KiosK, Order
 - 객체지향 더 열심히 공부해야겠다. 어렵다.. 도와줘요 연찬선생님
 
-<img height="500px" src="C:\Users\TECH5-03\Downloads\다운로드.jpg" title="Github_Logo" width="500px"/></img>
+![다운로드](https://github.com/vlshzl35/oop-KrustyKrab/assets/81032378/9ffcb76e-bd07-427f-b898-e5901fb2d75e)

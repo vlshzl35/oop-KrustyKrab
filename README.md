@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ��OOP-KrustyKrab(집게리아)��
 
 ## 프로젝트 소개
@@ -71,6 +72,9 @@
 
 이 프로그램은 객체지향 프로그래밍의 기본 원리를 적용하여 구현되었습니다.
 
+=======
+# oop-KrustyKrab (집게리아)
+>>>>>>> 31e527a8bd200063ba2614a8b6f6f91f7bcd88e5
 
 ## 팀원 소개
 1. 양희윤 : Hamburger와 레시피 생성 및 초기화
@@ -84,4 +88,9 @@
 5. 오형동 : KiosK, Order
 - 객체지향 더 열심히 공부해야겠다. 어렵다.. 도와줘요 연찬선생님
 
+<<<<<<< HEAD
 ![image.jpg](./krustykrab.jpg)
+=======
+
+![다운로드](https://github.com/vlshzl35/oop-KrustyKrab/assets/81032378/9ffcb76e-bd07-427f-b898-e5901fb2d75e)
+>>>>>>> 31e527a8bd200063ba2614a8b6f6f91f7bcd88e5
